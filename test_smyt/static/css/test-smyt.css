@@ -1,0 +1,46 @@
+.sidebar {}
+
+	.sidebar.sidebar_left{
+		float: left;
+	}
+
+.content {
+	margin-left: 150px;
+}
+
+.form {
+	background-color: #ffffff;
+}
+
+	.form.form_bordered {
+		margin: 10px 0;
+		padding: 10px 5px;
+		border: 1px solid black;
+	}
+
+	.form__title {
+		background-color: #ffffff;
+		margin: -18px 0 0 7px;
+		line-height: 14px;
+		position: absolute;
+		padding: 0 4px;
+	}
+
+table.object-list {
+	border: 1px solid black;
+	padding: 1px;
+	width: 100%;
+}
+
+	.object-list td {
+		border: 1px solid black;
+		padding: 3px;
+		line-height: 27px;
+	}
+
+.edit-input {
+	width: 70px;
+}
+	.edit-input.edit-input_date {
+		width: 140px;
+	}

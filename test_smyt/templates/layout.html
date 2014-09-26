@@ -1,0 +1,21 @@
+{% load static from staticfiles %}<!DOCTYPE html>
+<html ng-app="testSmyt">
+<head>
+	<title>{%  block title %}{% endblock title %}</title>
+	{% block scripts %}
+		<script src="{% static 'js/jquery-1.10.2.js' %}" type="text/javascript"></script>
+		<script src="{% static 'js/backbone-min.js' %}" type="text/javascript"></script>
+	{% endblock scripts %}
+	{% block styles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/test-smyt.css' %}" />
+	{% endblock styles %}
+</head>
+<body>
+{% block content %}{% endblock content %}
+{% block footer %}{% endblock footer %}
+<script type="text/javascript">
+	window.STATIC_URL = "{{ STATIC_URL }}";
+	{% block javascript %}{% endblock javascript %}
+</script>
+</body>
+</html>

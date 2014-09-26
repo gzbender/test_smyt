@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+{% block scripts %}
+	{{ block.super }}
+	<script src="{% static 'js/jquery.ui/jquery.ui.core.min.js' %}" type="text/javascript"></script>
+	<script src="{% static 'js/jquery.ui/jquery.ui.datepicker.min.js' %}" type="text/javascript"></script>
+	{% get_current_language as LANGUAGE_CODE %}
+	{% if LANGUAGE_CODE == 'ru-RU' %}
+	<script src="{% static 'js/jquery.ui/i18n/jquery.ui.datepicker-ru.min.js' %}" type="text/javascript"></script>
+	{% endif %}
+	<script src="{% static 'js/angular/angular.1.2.25.min.js' %}" type="text/javascript"></script>
+	<script src="{% static 'js/angular/angular-route.min.js' %}" type="text/javascript"></script>
+	<script src="{% static 'js/test-smyt/app.js' %}" type="text/javascript"></script>
+	<script src="{% static 'js/test-smyt/controllers.js' %}" type="text/javascript"></script>
+{% endblock scripts %}
+
+{% block content %}
+<aside class="sidebar sidebar_left">
+	<ul class="models">
+		{% for model in models %}
+		<li class="models__item"><a class="models__item-link" href="#/object-list/{{ model }}">{{ model }}</a></li>
+		{% endfor %}
+	</ul>
+</aside>
+<article class="content" ng-view>
+</article>
+{% endblock content %}

@@ -1,0 +1,22 @@
+<div ng-controller="ObjectListCtrl" style="width: 500px;">
+	<table class="object-list">
+		<tr>
+			<td ng-repeat="field in fields"
+			class="object-list-column {{ field.editable ? ('object-list-column_'+field.type) : '' }}">{{field.title}}</td>
+		</tr>
+		<tr ng-repeat="object in objectList">
+			<td ng-repeat="field in fields" ng-click="field.editable ? edit(object.id, field.name) : ''">
+				<span ng-show="!isEdit(object.id, field.name)">{{ object[field.name] }}</span>
+				<input ng-if="field.editable" class="edit-input edit-input_{{ field.type }}"
+					type="{{inputTypes[field.type]}}" ng-show="isEdit(object.id, field.name)" ng-model="object[field.name]" />
+			</td>
+		</tr>
+	</table>
+	<form class="form form_bordered">
+		<span class="form__title">New {{ modelTitle }}</span>
+		<div ng-repeat="field in fields | filter: {name: '!id'}">
+		{{field.title}}&nbsp;&nbsp;<input class="edit-input edit-input_{{ field.type }}" type="{{inputTypes[field.type]}}" ng-model="newObj[field.name]" />
+		</div>
+		<button ng-click="create()">Add</button>
+	</form>
+</div>
