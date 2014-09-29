@@ -1,3 +1,4 @@
 South
 PyYaml
+djangorestframework==2.3.13
 Django==1.7

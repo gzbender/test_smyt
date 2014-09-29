@@ -2,7 +2,7 @@ test-smyt:
   django_addr: http://127.0.0.1:8000
   server_name: test-smyt.loc
   venv_dir: /home/vagrant/env/test-smyt-env
-  work_dir: /test-smyt
+  work_dir: /test_smyt
 
 python2:
   lookup:

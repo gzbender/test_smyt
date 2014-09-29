@@ -3,8 +3,9 @@
 <head>
 	<title>{%  block title %}{% endblock title %}</title>
 	{% block scripts %}
-		<script src="{% static 'js/jquery-1.10.2.js' %}" type="text/javascript"></script>
-		<script src="{% static 'js/backbone-min.js' %}" type="text/javascript"></script>
+	<script src="{% static 'js/angular/angular.1.2.25.min.js' %}" type="text/javascript"></script>
+	<script src="{% static 'js/angular/angular-route.min.js' %}" type="text/javascript"></script>
+	<script src="{% static 'js/functions.js' %}" type="text/javascript"></script>
 	{% endblock scripts %}
 	{% block styles %}
 		<link rel="stylesheet" type="text/css" href="{% static 'css/test-smyt.css' %}" />
@@ -15,6 +16,9 @@
 {% block footer %}{% endblock footer %}
 <script type="text/javascript">
 	window.STATIC_URL = "{{ STATIC_URL }}";
+	window.API_URLS = {
+		'objects': '/api/objects/:model/'
+	}
 	{% block javascript %}{% endblock javascript %}
 </script>
 </body>

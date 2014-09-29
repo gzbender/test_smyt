@@ -1,5 +1,4 @@
 .sidebar {}
-
 	.sidebar.sidebar_left{
 		float: left;
 	}
@@ -11,13 +10,11 @@
 .form {
 	background-color: #ffffff;
 }
-
 	.form.form_bordered {
 		margin: 10px 0;
 		padding: 10px 5px;
 		border: 1px solid black;
 	}
-
 	.form__title {
 		background-color: #ffffff;
 		margin: -18px 0 0 7px;
@@ -26,21 +23,27 @@
 		padding: 0 4px;
 	}
 
-table.object-list {
+.object-list {
 	border: 1px solid black;
 	padding: 1px;
 	width: 100%;
 }
-
 	.object-list td {
 		border: 1px solid black;
-		padding: 3px;
-		line-height: 27px;
+		line-height: 30px;
 	}
+	.object-list__column{}
+		.object-list__column_number {
+			min-width: 80px;
+		}
+		.object-list__column_date {
+			min-width: 150px;
+		}
 
-.edit-input {
-	width: 70px;
-}
+.edit-input {}
+	.edit-input.edit-input_number {
+		width: 70px;
+	}
 	.edit-input.edit-input_date {
 		width: 140px;
 	}
