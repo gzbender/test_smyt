@@ -18,7 +18,10 @@ mysql:
 
   # Manage databases
   database:
-    - smyt
+    - name: smyt
+      charset: utf8
+    - name: test_smyt
+      charset: utf8
   schema:
     smyt:
       load: False
@@ -30,4 +33,6 @@ mysql:
       host: localhost
       databases:
         - database: smyt
+          grants: ['all privileges']
+        - database: test_smyt
           grants: ['all privileges']

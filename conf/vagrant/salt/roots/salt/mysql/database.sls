@@ -10,11 +10,12 @@ include:
 {% set state_id = 'mysql_db_' ~ loop.index0 %}
 {{ state_id }}:
   mysql_database.present:
-    - name: {{ database }}
+    - name: {{ database.name }}
     - host: localhost
     - connection_user: root
     - connection_pass: '{{ mysql_root_pass }}'
     - connection_charset: utf8
+    - character_set: {{ database.charset|default('utf8') }}
 
 {% if salt['pillar.get'](['mysql', 'schema', database, 'load']|join(':'), False) %}
 {{ state_id }}_schema:
