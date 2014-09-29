@@ -2,6 +2,7 @@ var testSmyt = angular.module('testSmyt', ['ngRoute', 'testSmytControllers']);
 
 testSmyt.run(function($http){
     $http.defaults.headers.post['X-CSRFToken'] = getCookie('csrftoken');
+    $http.defaults.headers.patch['X-CSRFToken'] = getCookie('csrftoken');
 })
 
 testSmyt.config(['$routeProvider', function($routeProvider) {

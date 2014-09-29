@@ -17,7 +17,9 @@
 <script type="text/javascript">
 	window.STATIC_URL = "{{ STATIC_URL }}";
 	window.API_URLS = {
-		'objects': '/api/objects/:model/'
+		'objects': '/api/objects/:model/',
+		'create_object': '/api/objects/:model/new/',
+		'update_object': '/api/objects/:model/edit/:id/'
 	}
 	{% block javascript %}{% endblock javascript %}
 </script>
