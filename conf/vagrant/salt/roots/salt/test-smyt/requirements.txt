@@ -1,5 +1,6 @@
 supervisor
 gunicorn
 PyYaml
+django-dynamic-fixture
 djangorestframework==2.3.13
 Django==1.7

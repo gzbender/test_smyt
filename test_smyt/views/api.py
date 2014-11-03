@@ -28,7 +28,7 @@ class ObjectsView(ListAPIView):
                     'editable': field.editable,
                 })
             result = {
-                'objects': model.objects.values(),
+                'objects': list(model.objects.values()),
                 'fields': fields,
             }
             return Response(result, status=status.HTTP_200_OK)
