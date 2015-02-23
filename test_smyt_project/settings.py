@@ -96,3 +96,5 @@ STATIC_URL = '/s/'
 
 STATIC_ROOT = '_static'
 MEDIA_ROOT = '_media'
+
+APPEND_SLASH = False
