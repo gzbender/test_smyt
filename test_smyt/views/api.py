@@ -25,7 +25,7 @@ class ObjectsView(ListAPIView):
                     'type': types.get(type(field)),
                     'title': field.verbose_name,
                     'required': field.blank,
-                    'editable': field.editable,
+                    'editable': field.editable and field.name != model._meta.pk.name,
                 })
             result = {
                 'objects': list(model.objects.values()),

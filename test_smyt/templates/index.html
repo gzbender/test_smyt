@@ -4,8 +4,10 @@
 
 {% block scripts %}
 	{{ block.super }}
-	<script src="{% static 'js/test-smyt/app.js' %}" type="text/javascript"></script>
-	<script src="{% static 'js/test-smyt/controllers.js' %}" type="text/javascript"></script>
+	<script src="{% static 'test-smyt/resources.js' %}" type="text/javascript"></script>
+	<script src="{% static 'test-smyt/controllers.js' %}" type="text/javascript"></script>
+	<script src="{% static 'test-smyt/directives.js' %}" type="text/javascript"></script>
+	<script src="{% static 'test-smyt/app.js' %}" type="text/javascript"></script>
 {% endblock scripts %}
 
 {% block content %}

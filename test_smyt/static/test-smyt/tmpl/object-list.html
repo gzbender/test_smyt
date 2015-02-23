@@ -1,0 +1,21 @@
+<div style="width: 650px;">
+	<table class="object-list">
+		<tr>
+			<td ng-repeat="field in fields"
+			class="object-list__column {{field.editable ? ('object-list__column_'+field.type) : '' }}">{{field.title}}</td>
+		</tr>
+		<tr ng-repeat="object in objects">
+			<td ng-repeat="field in fields">
+				<editable-field object="object" field="field.name" type="field.type" editable="field.editable" model="model"></editable-field>
+			</td>
+		</tr>
+	</table>
+	<form name="newObjectForm" class="form form_bordered">
+		<span class="form__title">New</span>
+		<div ng-repeat="field in fields | filter: {name: '!id'}">
+			{{field.title}}&nbsp;&nbsp;<input class="edit-input edit-input_{{ field.type }}" type="{{field.type}}"
+			ng-model="newObj[field.name]" name="{{ field.name }}" ng-required="field.required" />
+		</div>
+		<button ng-click="create()" ng-disabled="newObjectForm.$invalid">Add</button>
+	</form>
+</div>

@@ -1,0 +1,5 @@
+<div>
+	<span ng-show="!isEdit" ng-click="edit()">{{object[field]}}</span>
+	<input ng-if="editable" class="edit-input edit-input_{{type}}"
+		type="{{type}}" ng-show="isEdit" ng-model="object[field]" />
+</div>
