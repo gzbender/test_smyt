@@ -16,31 +16,32 @@ python2:
   lookup:
     pkg: python2.7
 
-mysql:
-  charset: utf8
-  server:
-    root_password: 'somepass'
-    bind-address: 127.0.0.1
-    port: 3306
-    user: mysql
+postgres:
+  pg_hba.conf: salt://postgres/pg_hba.conf
 
-  # Manage databases
-  database:
-    - name: smyt
-      charset: utf8
-    - name: test_smyt
-      charset: utf8
-  schema:
-    smyt:
-      load: False
+  use_upstream_repo: True
 
-  # Manage users
-  user:
-    - name: smyt
-      password: 'somepass'
-      host: localhost
-      databases:
-        - database: smyt
-          grants: ['all privileges']
-        - database: test_smyt
-          grants: ['all privileges']
+  lookup:
+    id: '9.4'
+
+  users:
+    user:
+      password: 'pass'
+      createdb: True
+
+  # This section cover this ACL management of the pg_hba.conf file.
+  # <type>, <database>, <user>, [host], <method>
+  acls:
+    - ['local', 'db', 'user', 'trust']
+
+  databases:
+    db:
+      owner: 'user'
+      user: 'user'
+      template: 'template0'
+      lc_ctype: 'C.UTF-8'
+      lc_collate: 'C.UTF-8'
+
+  # This section will append your configuration to postgresql.conf.
+  postgresconf: |
+    listen_addresses = 'localhost,*'

@@ -1,0 +1,2512 @@
+!!!
+!!! WARNING: This command is deprecated.
+!!! 
+!!!     You should now run your application with the WSGI interface
+!!!     installed with your project. Ex.:
+!!! 
+!!!         gunicorn myproject.wsgi:application
+!!! 
+!!!     See https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/gunicorn/
+!!!     for more info.
+!!!
+
+[2014-10-03 11:10:37 +0000] [1968] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  syslog: False
+  statsd_host: None
+  post_fork: <function post_fork at 0xd53b18>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog_facility: user
+  when_ready: <function when_ready at 0xd53848>
+  pre_fork: <function pre_fork at 0xd539b0>
+  cert_reqs: 0
+  preload_app: False
+  workers: 3
+  keepalive: 2
+  accesslog: None
+  pidfile: None
+  worker_tmp_dir: None
+  group: 1000
+  graceful_timeout: 30
+  spew: False
+  proc_name: None
+  umask: 0
+  on_reload: <function on_reload at 0xd536e0>
+  post_worker_init: <function post_worker_init at 0xd53c80>
+  pre_exec: <function pre_exec at 0xd59140>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0xd597d0>
+  config: None
+  logconfig: None
+  check_config: False
+  do_handshake_on_connect: False
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0xd592a8>
+  post_request: <function post_request at 0xd59398>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0xd53de8>
+  ca_certs: None
+  threads: 1
+  max_requests: 0
+  chdir: /test_smyt
+  daemon: False
+  user: 1000
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0xd59500>
+  paste: None
+  default_proc_name: gunicorn
+  errorlog: /test_smyt/log/log.txt
+  logger_class: gunicorn.glogging.Logger
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0xd53f50>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0xd59668>
+  timeout: 30
+  on_starting: <function on_starting at 0xd53578>
+  debug: False
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+[2014-10-03 11:10:37 +0000] [1968] [INFO] Starting gunicorn 19.1.1
+[2014-10-03 11:10:37 +0000] [1968] [DEBUG] Arbiter booted
+[2014-10-03 11:10:37 +0000] [1968] [INFO] Listening at: http://127.0.0.1:8000 (1968)
+[2014-10-03 11:10:37 +0000] [1968] [INFO] Using worker: sync
+[2014-10-03 11:10:37 +0000] [3092] [INFO] Booting worker with pid: 3092
+[2014-10-03 11:10:37 +0000] [3092] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 105, in load
+    mod = util.import_module("gunicorn.app.django_wsgi")
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/django_wsgi.py", line 20, in <module>
+    from django.core.management.validation import get_validation_errors
+ImportError: No module named validation
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 105, in load
+    mod = util.import_module("gunicorn.app.django_wsgi")
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/django_wsgi.py", line 20, in <module>
+    from django.core.management.validation import get_validation_errors
+ImportError: No module named validation
+[2014-10-03 11:10:37 +0000] [3092] [INFO] Worker exiting (pid: 3092)
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/bin/gunicorn_django", line 9, in <module>
+    load_entry_point('gunicorn==19.1.1', 'console_scripts', 'gunicorn_django')()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 160, in run
+    DjangoApplication("%(prog)s [OPTIONS] [SETTINGS_PATH]").run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 185, in run
+    super(Application, self).run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 71, in run
+    Arbiter(self).run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 169, in run
+    self.manage_workers()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 477, in manage_workers
+    self.spawn_workers()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 542, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 209, in handle_chld
+    self.reap_workers()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 459, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+!!!
+!!! WARNING: This command is deprecated.
+!!! 
+!!!     You should now run your application with the WSGI interface
+!!!     installed with your project. Ex.:
+!!! 
+!!!         gunicorn myproject.wsgi:application
+!!! 
+!!!     See https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/gunicorn/
+!!!     for more info.
+!!!
+
+[2014-10-03 11:11:14 +0000] [3111] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  syslog: False
+  statsd_host: None
+  post_fork: <function post_fork at 0x2792b18>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog_facility: user
+  when_ready: <function when_ready at 0x2792848>
+  pre_fork: <function pre_fork at 0x27929b0>
+  cert_reqs: 0
+  preload_app: False
+  workers: 3
+  keepalive: 2
+  accesslog: None
+  pidfile: None
+  worker_tmp_dir: None
+  group: 1000
+  graceful_timeout: 30
+  spew: False
+  proc_name: None
+  umask: 0
+  on_reload: <function on_reload at 0x27926e0>
+  post_worker_init: <function post_worker_init at 0x2792c80>
+  pre_exec: <function pre_exec at 0x2798140>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x27987d0>
+  config: None
+  logconfig: None
+  check_config: False
+  do_handshake_on_connect: False
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x27982a8>
+  post_request: <function post_request at 0x2798398>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x2792de8>
+  ca_certs: None
+  threads: 1
+  max_requests: 0
+  chdir: /test_smyt
+  daemon: False
+  user: 1000
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x2798500>
+  paste: None
+  default_proc_name: gunicorn
+  errorlog: /test_smyt/log/log.txt
+  logger_class: gunicorn.glogging.Logger
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x2792f50>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x2798668>
+  timeout: 30
+  on_starting: <function on_starting at 0x2792578>
+  debug: False
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+[2014-10-03 11:11:14 +0000] [3111] [INFO] Starting gunicorn 19.1.1
+[2014-10-03 11:11:14 +0000] [3111] [DEBUG] Arbiter booted
+[2014-10-03 11:11:14 +0000] [3111] [INFO] Listening at: http://127.0.0.1:8000 (3111)
+[2014-10-03 11:11:14 +0000] [3111] [INFO] Using worker: sync
+[2014-10-03 11:11:14 +0000] [3227] [INFO] Booting worker with pid: 3227
+[2014-10-03 11:11:14 +0000] [3227] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 105, in load
+    mod = util.import_module("gunicorn.app.django_wsgi")
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/django_wsgi.py", line 20, in <module>
+    from django.core.management.validation import get_validation_errors
+ImportError: No module named validation
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 105, in load
+    mod = util.import_module("gunicorn.app.django_wsgi")
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/django_wsgi.py", line 20, in <module>
+    from django.core.management.validation import get_validation_errors
+ImportError: No module named validation
+[2014-10-03 11:11:14 +0000] [3227] [INFO] Worker exiting (pid: 3227)
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/bin/gunicorn_django", line 9, in <module>
+    load_entry_point('gunicorn==19.1.1', 'console_scripts', 'gunicorn_django')()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 160, in run
+    DjangoApplication("%(prog)s [OPTIONS] [SETTINGS_PATH]").run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 185, in run
+    super(Application, self).run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 71, in run
+    Arbiter(self).run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 169, in run
+    self.manage_workers()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 477, in manage_workers
+    self.spawn_workers()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 542, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 209, in handle_chld
+    self.reap_workers()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 459, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+!!!
+!!! WARNING: This command is deprecated.
+!!! 
+!!!     You should now run your application with the WSGI interface
+!!!     installed with your project. Ex.:
+!!! 
+!!!         gunicorn myproject.wsgi:application
+!!! 
+!!!     See https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/gunicorn/
+!!!     for more info.
+!!!
+
+[2014-10-03 11:13:34 +0000] [2961] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  syslog: False
+  statsd_host: None
+  post_fork: <function post_fork at 0x18d1b18>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog_facility: user
+  when_ready: <function when_ready at 0x18d1848>
+  pre_fork: <function pre_fork at 0x18d19b0>
+  cert_reqs: 0
+  preload_app: False
+  workers: 3
+  keepalive: 2
+  accesslog: None
+  pidfile: None
+  worker_tmp_dir: None
+  group: 1000
+  graceful_timeout: 30
+  spew: False
+  proc_name: None
+  umask: 0
+  on_reload: <function on_reload at 0x18d16e0>
+  post_worker_init: <function post_worker_init at 0x18d1c80>
+  pre_exec: <function pre_exec at 0x18d7140>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x18d77d0>
+  config: None
+  logconfig: None
+  check_config: False
+  do_handshake_on_connect: False
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x18d72a8>
+  post_request: <function post_request at 0x18d7398>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x18d1de8>
+  ca_certs: None
+  threads: 1
+  max_requests: 0
+  chdir: /test_smyt
+  daemon: False
+  user: 1000
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x18d7500>
+  paste: None
+  default_proc_name: gunicorn
+  errorlog: /test_smyt/log/log.txt
+  logger_class: gunicorn.glogging.Logger
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x18d1f50>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x18d7668>
+  timeout: 30
+  on_starting: <function on_starting at 0x18d1578>
+  debug: False
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+[2014-10-03 11:13:34 +0000] [2961] [INFO] Starting gunicorn 19.1.1
+[2014-10-03 11:13:34 +0000] [2961] [DEBUG] Arbiter booted
+[2014-10-03 11:13:34 +0000] [2961] [INFO] Listening at: http://127.0.0.1:8000 (2961)
+[2014-10-03 11:13:34 +0000] [2961] [INFO] Using worker: sync
+[2014-10-03 11:13:34 +0000] [3256] [INFO] Booting worker with pid: 3256
+[2014-10-03 11:13:34 +0000] [3257] [INFO] Booting worker with pid: 3257
+[2014-10-03 11:13:34 +0000] [3258] [INFO] Booting worker with pid: 3258
+[2014-10-03 11:13:34 +0000] [3256] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 105, in load
+    mod = util.import_module("gunicorn.app.django_wsgi")
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/django_wsgi.py", line 20, in <module>
+    from django.core.management.validation import get_validation_errors
+ImportError: No module named validation
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 105, in load
+    mod = util.import_module("gunicorn.app.django_wsgi")
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/django_wsgi.py", line 20, in <module>
+    from django.core.management.validation import get_validation_errors
+ImportError: No module named validation
+[2014-10-03 11:13:34 +0000] [3256] [INFO] Worker exiting (pid: 3256)
+[2014-10-03 11:13:34 +0000] [2961] [DEBUG] 3 workers
+[2014-10-03 11:13:34 +0000] [3257] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 105, in load
+    mod = util.import_module("gunicorn.app.django_wsgi")
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/django_wsgi.py", line 20, in <module>
+    from django.core.management.validation import get_validation_errors
+ImportError: No module named validation
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 105, in load
+    mod = util.import_module("gunicorn.app.django_wsgi")
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/django_wsgi.py", line 20, in <module>
+    from django.core.management.validation import get_validation_errors
+ImportError: No module named validation
+[2014-10-03 11:13:34 +0000] [3257] [INFO] Worker exiting (pid: 3257)
+[2014-10-03 11:13:34 +0000] [3258] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 105, in load
+    mod = util.import_module("gunicorn.app.django_wsgi")
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/django_wsgi.py", line 20, in <module>
+    from django.core.management.validation import get_validation_errors
+ImportError: No module named validation
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 105, in load
+    mod = util.import_module("gunicorn.app.django_wsgi")
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/django_wsgi.py", line 20, in <module>
+    from django.core.management.validation import get_validation_errors
+ImportError: No module named validation
+[2014-10-03 11:13:34 +0000] [3258] [INFO] Worker exiting (pid: 3258)
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/bin/gunicorn_django", line 9, in <module>
+    load_entry_point('gunicorn==19.1.1', 'console_scripts', 'gunicorn_django')()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 160, in run
+    DjangoApplication("%(prog)s [OPTIONS] [SETTINGS_PATH]").run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 185, in run
+    super(Application, self).run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 71, in run
+    Arbiter(self).run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 196, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 292, in halt
+    self.stop()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 343, in stop
+    time.sleep(0.1)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 209, in handle_chld
+    self.reap_workers()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 459, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+!!!
+!!! WARNING: This command is deprecated.
+!!! 
+!!!     You should now run your application with the WSGI interface
+!!!     installed with your project. Ex.:
+!!! 
+!!!         gunicorn myproject.wsgi:application
+!!! 
+!!!     See https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/gunicorn/
+!!!     for more info.
+!!!
+
+[2014-10-03 11:16:33 +0000] [3279] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  syslog: False
+  statsd_host: None
+  post_fork: <function post_fork at 0x10c4b18>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog_facility: user
+  when_ready: <function when_ready at 0x10c4848>
+  pre_fork: <function pre_fork at 0x10c49b0>
+  cert_reqs: 0
+  preload_app: False
+  workers: 3
+  keepalive: 2
+  accesslog: None
+  pidfile: None
+  worker_tmp_dir: None
+  group: 1000
+  graceful_timeout: 30
+  spew: False
+  proc_name: None
+  umask: 0
+  on_reload: <function on_reload at 0x10c46e0>
+  post_worker_init: <function post_worker_init at 0x10c4c80>
+  pre_exec: <function pre_exec at 0x10ca140>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x10ca7d0>
+  config: None
+  logconfig: None
+  check_config: False
+  do_handshake_on_connect: False
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x10ca2a8>
+  post_request: <function post_request at 0x10ca398>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x10c4de8>
+  ca_certs: None
+  threads: 1
+  max_requests: 0
+  chdir: /test_smyt
+  daemon: False
+  user: 1000
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x10ca500>
+  paste: None
+  default_proc_name: gunicorn
+  errorlog: /test_smyt/log/log.txt
+  logger_class: gunicorn.glogging.Logger
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x10c4f50>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x10ca668>
+  timeout: 30
+  on_starting: <function on_starting at 0x10c4578>
+  debug: False
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+[2014-10-03 11:16:33 +0000] [3279] [INFO] Starting gunicorn 19.1.1
+[2014-10-03 11:16:33 +0000] [3279] [DEBUG] Arbiter booted
+[2014-10-03 11:16:33 +0000] [3279] [INFO] Listening at: http://127.0.0.1:8000 (3279)
+[2014-10-03 11:16:33 +0000] [3279] [INFO] Using worker: sync
+[2014-10-03 11:16:33 +0000] [3397] [INFO] Booting worker with pid: 3397
+[2014-10-03 11:16:33 +0000] [3397] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 105, in load
+    mod = util.import_module("gunicorn.app.django_wsgi")
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/django_wsgi.py", line 20, in <module>
+    from django.core.management.validation import get_validation_errors
+ImportError: No module named validation
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 105, in load
+    mod = util.import_module("gunicorn.app.django_wsgi")
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/django_wsgi.py", line 20, in <module>
+    from django.core.management.validation import get_validation_errors
+ImportError: No module named validation
+[2014-10-03 11:16:33 +0000] [3397] [INFO] Worker exiting (pid: 3397)
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/bin/gunicorn_django", line 9, in <module>
+    load_entry_point('gunicorn==19.1.1', 'console_scripts', 'gunicorn_django')()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 160, in run
+    DjangoApplication("%(prog)s [OPTIONS] [SETTINGS_PATH]").run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 185, in run
+    super(Application, self).run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 71, in run
+    Arbiter(self).run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 169, in run
+    self.manage_workers()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 477, in manage_workers
+    self.spawn_workers()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 542, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 209, in handle_chld
+    self.reap_workers()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 459, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+!!!
+!!! WARNING: This command is deprecated.
+!!! 
+!!!     You should now run your application with the WSGI interface
+!!!     installed with your project. Ex.:
+!!! 
+!!!         gunicorn myproject.wsgi:application
+!!! 
+!!!     See https://docs.djangoproject.com/en/1.5/howto/deployment/wsgi/gunicorn/
+!!!     for more info.
+!!!
+
+[2014-10-03 11:18:34 +0000] [3549] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  syslog: False
+  statsd_host: None
+  post_fork: <function post_fork at 0x27b1aa0>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog_facility: user
+  when_ready: <function when_ready at 0x27b17d0>
+  pre_fork: <function pre_fork at 0x27b1938>
+  cert_reqs: 0
+  preload_app: False
+  workers: 3
+  keepalive: 2
+  accesslog: None
+  pidfile: None
+  worker_tmp_dir: None
+  group: 1000
+  graceful_timeout: 30
+  spew: False
+  proc_name: None
+  umask: 0
+  on_reload: <function on_reload at 0x27b1668>
+  post_worker_init: <function post_worker_init at 0x27b1c08>
+  pre_exec: <function pre_exec at 0x27b70c8>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x27b7758>
+  config: None
+  logconfig: None
+  check_config: False
+  do_handshake_on_connect: False
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x27b7230>
+  post_request: <function post_request at 0x27b7320>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x27b1d70>
+  ca_certs: None
+  threads: 1
+  max_requests: 0
+  chdir: /test_smyt
+  daemon: False
+  user: 1000
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x27b7488>
+  paste: None
+  default_proc_name: gunicorn
+  errorlog: /test_smyt/log/log.txt
+  logger_class: gunicorn.glogging.Logger
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x27b1ed8>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x27b75f0>
+  timeout: 30
+  on_starting: <function on_starting at 0x27b1500>
+  debug: False
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+[2014-10-03 11:18:34 +0000] [3549] [INFO] Starting gunicorn 19.1.1
+[2014-10-03 11:18:34 +0000] [3549] [DEBUG] Arbiter booted
+[2014-10-03 11:18:34 +0000] [3549] [INFO] Listening at: http://127.0.0.1:8000 (3549)
+[2014-10-03 11:18:34 +0000] [3549] [INFO] Using worker: sync
+[2014-10-03 11:18:34 +0000] [3663] [INFO] Booting worker with pid: 3663
+[2014-10-03 11:18:34 +0000] [3663] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 105, in load
+    mod = util.import_module("gunicorn.app.django_wsgi")
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/django_wsgi.py", line 20, in <module>
+    from django.core.management.validation import get_validation_errors
+ImportError: No module named validation
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 105, in load
+    mod = util.import_module("gunicorn.app.django_wsgi")
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/django_wsgi.py", line 20, in <module>
+    from django.core.management.validation import get_validation_errors
+ImportError: No module named validation
+[2014-10-03 11:18:34 +0000] [3663] [INFO] Worker exiting (pid: 3663)
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/bin/gunicorn_django", line 9, in <module>
+    load_entry_point('gunicorn==19.1.1', 'console_scripts', 'gunicorn_django')()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/djangoapp.py", line 160, in run
+    DjangoApplication("%(prog)s [OPTIONS] [SETTINGS_PATH]").run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 185, in run
+    super(Application, self).run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 71, in run
+    Arbiter(self).run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 169, in run
+    self.manage_workers()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 477, in manage_workers
+    self.spawn_workers()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 542, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 209, in handle_chld
+    self.reap_workers()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 459, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+[2014-10-03 11:21:16 +0000] [3686] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  syslog: False
+  statsd_host: None
+  post_fork: <function post_fork at 0x170a938>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog_facility: user
+  when_ready: <function when_ready at 0x170a668>
+  pre_fork: <function pre_fork at 0x170a7d0>
+  cert_reqs: 0
+  preload_app: False
+  workers: 3
+  keepalive: 2
+  accesslog: None
+  pidfile: None
+  worker_tmp_dir: None
+  group: 1000
+  graceful_timeout: 30
+  spew: False
+  proc_name: None
+  umask: 0
+  on_reload: <function on_reload at 0x170a500>
+  post_worker_init: <function post_worker_init at 0x170aaa0>
+  pre_exec: <function pre_exec at 0x170aed8>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x170e5f0>
+  config: None
+  logconfig: None
+  check_config: False
+  do_handshake_on_connect: False
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x170e0c8>
+  post_request: <function post_request at 0x170e1b8>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x170ac08>
+  ca_certs: None
+  threads: 1
+  max_requests: 0
+  chdir: /home/vagrant
+  daemon: False
+  user: 1000
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x170e320>
+  paste: None
+  default_proc_name: test_smyt.test_smyt_project.wsgi:application
+  errorlog: /test_smyt/log/log.txt
+  logger_class: gunicorn.glogging.Logger
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x170ad70>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x170e488>
+  timeout: 30
+  on_starting: <function on_starting at 0x170a398>
+  debug: False
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+[2014-10-03 11:21:16 +0000] [3686] [INFO] Starting gunicorn 19.1.1
+[2014-10-03 11:21:16 +0000] [3686] [DEBUG] Arbiter booted
+[2014-10-03 11:21:16 +0000] [3686] [INFO] Listening at: http://127.0.0.1:8000 (3686)
+[2014-10-03 11:21:16 +0000] [3686] [INFO] Using worker: sync
+[2014-10-03 11:21:16 +0000] [3790] [INFO] Booting worker with pid: 3790
+[2014-10-03 11:21:16 +0000] [3790] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+ImportError: No module named test_smyt.test_smyt_project.wsgi
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+ImportError: No module named test_smyt.test_smyt_project.wsgi
+[2014-10-03 11:21:16 +0000] [3790] [INFO] Worker exiting (pid: 3790)
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/bin/gunicorn", line 9, in <module>
+    load_entry_point('gunicorn==19.1.1', 'console_scripts', 'gunicorn')()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 74, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 185, in run
+    super(Application, self).run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 71, in run
+    Arbiter(self).run()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 169, in run
+    self.manage_workers()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 477, in manage_workers
+    self.spawn_workers()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 542, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 209, in handle_chld
+    self.reap_workers()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 459, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+[2014-10-03 11:21:33 +0000] [3807] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  syslog: False
+  statsd_host: None
+  post_fork: <function post_fork at 0x2c2a938>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog_facility: user
+  when_ready: <function when_ready at 0x2c2a668>
+  pre_fork: <function pre_fork at 0x2c2a7d0>
+  cert_reqs: 0
+  preload_app: False
+  workers: 3
+  keepalive: 2
+  accesslog: None
+  pidfile: None
+  worker_tmp_dir: None
+  group: 1000
+  graceful_timeout: 30
+  spew: False
+  proc_name: None
+  umask: 0
+  on_reload: <function on_reload at 0x2c2a500>
+  post_worker_init: <function post_worker_init at 0x2c2aaa0>
+  pre_exec: <function pre_exec at 0x2c2aed8>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x2c2e5f0>
+  config: None
+  logconfig: None
+  check_config: False
+  do_handshake_on_connect: False
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x2c2e0c8>
+  post_request: <function post_request at 0x2c2e1b8>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x2c2ac08>
+  ca_certs: None
+  threads: 1
+  max_requests: 0
+  chdir: /home/vagrant
+  daemon: False
+  user: 1000
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x2c2e320>
+  paste: None
+  default_proc_name: test_smyt.test_smyt_project.wsgi:application
+  errorlog: /test_smyt/log/log.txt
+  logger_class: gunicorn.glogging.Logger
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x2c2ad70>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x2c2e488>
+  timeout: 30
+  on_starting: <function on_starting at 0x2c2a398>
+  debug: False
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+[2014-10-03 11:21:33 +0000] [3807] [INFO] Starting gunicorn 19.1.1
+[2014-10-03 11:21:33 +0000] [3807] [DEBUG] Arbiter booted
+[2014-10-03 11:21:33 +0000] [3807] [INFO] Listening at: http://127.0.0.1:8000 (3807)
+[2014-10-03 11:21:33 +0000] [3807] [INFO] Using worker: sync
+[2014-10-03 11:21:33 +0000] [3911] [INFO] Booting worker with pid: 3911
+[2014-10-03 11:21:33 +0000] [3911] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+ImportError: No module named test_smyt.test_smyt_project.wsgi
+Traceback (most recent call last):
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/arbiter.py", line 507, in spawn_worker
+    worker.init_process()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/workers/base.py", line 114, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/vagrant/env/test-smyt-env/local/lib/python2.7/site-packages/gunicorn/util.py", line 356, in import_app
+    __import__(module)
+ImportError: No module named test_smyt.test_smyt_project.wsgi
+[2014-10-03 11:21:33 +0000] [3911] [INFO] Worker exiting (pid: 3911)
+[2014-10-03 11:22:03 +0000] [4028] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  syslog: False
+  statsd_host: None
+  post_fork: <function post_fork at 0x1ef4938>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog_facility: user
+  when_ready: <function when_ready at 0x1ef4668>
+  pre_fork: <function pre_fork at 0x1ef47d0>
+  cert_reqs: 0
+  preload_app: False
+  workers: 3
+  keepalive: 2
+  accesslog: None
+  pidfile: None
+  worker_tmp_dir: None
+  group: 1000
+  graceful_timeout: 30
+  spew: False
+  proc_name: None
+  umask: 0
+  on_reload: <function on_reload at 0x1ef4500>
+  post_worker_init: <function post_worker_init at 0x1ef4aa0>
+  pre_exec: <function pre_exec at 0x1ef4ed8>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x1ef85f0>
+  config: None
+  logconfig: None
+  check_config: False
+  do_handshake_on_connect: False
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x1ef80c8>
+  post_request: <function post_request at 0x1ef81b8>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x1ef4c08>
+  ca_certs: None
+  threads: 1
+  max_requests: 0
+  chdir: /test_smyt
+  daemon: False
+  user: 1000
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x1ef8320>
+  paste: None
+  default_proc_name: test_smyt_project.wsgi:application
+  errorlog: /test_smyt/log/log.txt
+  logger_class: gunicorn.glogging.Logger
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x1ef4d70>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x1ef8488>
+  timeout: 30
+  on_starting: <function on_starting at 0x1ef4398>
+  debug: False
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+[2014-10-03 11:22:03 +0000] [4028] [INFO] Starting gunicorn 19.1.1
+[2014-10-03 11:22:03 +0000] [4028] [DEBUG] Arbiter booted
+[2014-10-03 11:22:03 +0000] [4028] [INFO] Listening at: http://127.0.0.1:8000 (4028)
+[2014-10-03 11:22:03 +0000] [4028] [INFO] Using worker: sync
+[2014-10-03 11:22:03 +0000] [4033] [INFO] Booting worker with pid: 4033
+[2014-10-03 11:22:03 +0000] [4034] [INFO] Booting worker with pid: 4034
+[2014-10-03 11:22:03 +0000] [4035] [INFO] Booting worker with pid: 4035
+[2014-10-03 11:22:03 +0000] [4028] [DEBUG] 3 workers
+[2014-10-03 11:22:14 +0000] [4034] [DEBUG] GET /
+[2014-10-03 11:22:29 +0000] [4033] [INFO] Worker exiting (pid: 4033)
+[2014-10-03 11:22:29 +0000] [4035] [INFO] Worker exiting (pid: 4035)
+[2014-10-03 11:22:29 +0000] [4028] [DEBUG] 3 workers
+[2014-10-03 11:22:29 +0000] [4034] [INFO] Worker exiting (pid: 4034)
+[2014-10-03 11:22:29 +0000] [4028] [INFO] Handling signal: int
+[2014-10-03 11:22:29 +0000] [4028] [INFO] Shutting down: Master
+[2014-10-03 11:22:49 +0000] [3928] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  syslog: False
+  statsd_host: None
+  post_fork: <function post_fork at 0x1c39938>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog_facility: user
+  when_ready: <function when_ready at 0x1c39668>
+  pre_fork: <function pre_fork at 0x1c397d0>
+  cert_reqs: 0
+  preload_app: False
+  workers: 3
+  keepalive: 2
+  accesslog: None
+  pidfile: None
+  worker_tmp_dir: None
+  group: 1000
+  graceful_timeout: 30
+  spew: False
+  proc_name: None
+  umask: 0
+  on_reload: <function on_reload at 0x1c39500>
+  post_worker_init: <function post_worker_init at 0x1c39aa0>
+  pre_exec: <function pre_exec at 0x1c39ed8>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x1c3d5f0>
+  config: None
+  logconfig: None
+  check_config: False
+  do_handshake_on_connect: False
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x1c3d0c8>
+  post_request: <function post_request at 0x1c3d1b8>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x1c39c08>
+  ca_certs: None
+  threads: 1
+  max_requests: 0
+  chdir: /test_smyt
+  daemon: False
+  user: 1000
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x1c3d320>
+  paste: None
+  default_proc_name: test_smyt_project.wsgi:application
+  errorlog: /test_smyt/log/log.txt
+  logger_class: gunicorn.glogging.Logger
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x1c39d70>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x1c3d488>
+  timeout: 30
+  on_starting: <function on_starting at 0x1c39398>
+  debug: False
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+[2014-10-03 11:22:49 +0000] [3928] [INFO] Starting gunicorn 19.1.1
+[2014-10-03 11:22:49 +0000] [3928] [DEBUG] Arbiter booted
+[2014-10-03 11:22:49 +0000] [3928] [INFO] Listening at: http://127.0.0.1:8000 (3928)
+[2014-10-03 11:22:49 +0000] [3928] [INFO] Using worker: sync
+[2014-10-03 11:22:49 +0000] [4042] [INFO] Booting worker with pid: 4042
+[2014-10-03 11:22:49 +0000] [4043] [INFO] Booting worker with pid: 4043
+[2014-10-03 11:22:49 +0000] [4044] [INFO] Booting worker with pid: 4044
+[2014-10-03 11:22:49 +0000] [3928] [DEBUG] 3 workers
+[2014-10-03 11:22:57 +0000] [4043] [DEBUG] GET /
+[2014-10-03 11:23:03 +0000] [3928] [DEBUG] 3 workers
+[2014-10-03 11:23:03 +0000] [4044] [INFO] Worker exiting (pid: 4044)
+[2014-10-03 11:23:03 +0000] [4042] [INFO] Worker exiting (pid: 4042)
+[2014-10-03 11:23:03 +0000] [4043] [INFO] Worker exiting (pid: 4043)
+[2014-10-03 11:23:03 +0000] [3928] [INFO] Handling signal: int
+[2014-10-03 11:23:03 +0000] [3928] [INFO] Shutting down: Master
+[2014-10-03 11:23:59 +0000] [3416] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  syslog: False
+  statsd_host: None
+  post_fork: <function post_fork at 0x27d5938>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog_facility: user
+  when_ready: <function when_ready at 0x27d5668>
+  pre_fork: <function pre_fork at 0x27d57d0>
+  cert_reqs: 0
+  preload_app: False
+  workers: 3
+  keepalive: 2
+  accesslog: None
+  pidfile: None
+  worker_tmp_dir: None
+  group: 1000
+  graceful_timeout: 30
+  spew: False
+  proc_name: None
+  umask: 0
+  on_reload: <function on_reload at 0x27d5500>
+  post_worker_init: <function post_worker_init at 0x27d5aa0>
+  pre_exec: <function pre_exec at 0x27d5ed8>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x27d95f0>
+  config: None
+  logconfig: None
+  check_config: False
+  do_handshake_on_connect: False
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x27d90c8>
+  post_request: <function post_request at 0x27d91b8>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x27d5c08>
+  ca_certs: None
+  threads: 1
+  max_requests: 0
+  chdir: /test_smyt
+  daemon: False
+  user: 1000
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x27d9320>
+  paste: None
+  default_proc_name: test_smyt_project.wsgi:application
+  errorlog: /test_smyt/log/log.txt
+  logger_class: gunicorn.glogging.Logger
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x27d5d70>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x27d9488>
+  timeout: 30
+  on_starting: <function on_starting at 0x27d5398>
+  debug: False
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+[2014-10-03 11:23:59 +0000] [3416] [INFO] Starting gunicorn 19.1.1
+[2014-10-03 11:23:59 +0000] [3416] [DEBUG] Arbiter booted
+[2014-10-03 11:23:59 +0000] [3416] [INFO] Listening at: http://127.0.0.1:8000 (3416)
+[2014-10-03 11:23:59 +0000] [3416] [INFO] Using worker: sync
+[2014-10-03 11:23:59 +0000] [4053] [INFO] Booting worker with pid: 4053
+[2014-10-03 11:23:59 +0000] [4054] [INFO] Booting worker with pid: 4054
+[2014-10-03 11:23:59 +0000] [4055] [INFO] Booting worker with pid: 4055
+[2014-10-03 11:23:59 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:24:03 +0000] [4053] [DEBUG] GET /
+[2014-10-03 11:24:10 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:24:10 +0000] [3416] [INFO] Handling signal: hup
+[2014-10-03 11:24:10 +0000] [3416] [INFO] Hang up: Master
+[2014-10-03 11:24:10 +0000] [3416] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  syslog: False
+  statsd_host: None
+  post_fork: <function post_fork at 0x27d5938>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog_facility: user
+  when_ready: <function when_ready at 0x27d5668>
+  pre_fork: <function pre_fork at 0x27d57d0>
+  cert_reqs: 0
+  preload_app: False
+  workers: 3
+  keepalive: 2
+  accesslog: None
+  pidfile: None
+  worker_tmp_dir: None
+  group: 1000
+  graceful_timeout: 30
+  spew: False
+  proc_name: None
+  umask: 0
+  on_reload: <function on_reload at 0x27d5500>
+  post_worker_init: <function post_worker_init at 0x27d5aa0>
+  pre_exec: <function pre_exec at 0x27d5ed8>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x27d95f0>
+  config: None
+  logconfig: None
+  check_config: False
+  do_handshake_on_connect: False
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x27d90c8>
+  post_request: <function post_request at 0x27d91b8>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x27d5c08>
+  ca_certs: None
+  threads: 1
+  max_requests: 0
+  chdir: /test_smyt
+  daemon: False
+  user: 1000
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x27d9320>
+  paste: None
+  default_proc_name: test_smyt_project.wsgi:application
+  errorlog: /test_smyt/log/log.txt
+  logger_class: gunicorn.glogging.Logger
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x27d5d70>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x27d9488>
+  timeout: 30
+  on_starting: <function on_starting at 0x27d5398>
+  debug: False
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+[2014-10-03 11:24:10 +0000] [4056] [INFO] Booting worker with pid: 4056
+[2014-10-03 11:24:10 +0000] [4057] [INFO] Booting worker with pid: 4057
+[2014-10-03 11:24:10 +0000] [4053] [INFO] Worker exiting (pid: 4053)
+[2014-10-03 11:24:10 +0000] [4054] [INFO] Worker exiting (pid: 4054)
+[2014-10-03 11:24:10 +0000] [4055] [INFO] Worker exiting (pid: 4055)
+[2014-10-03 11:24:10 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:24:10 +0000] [4058] [INFO] Booting worker with pid: 4058
+[2014-10-03 11:24:10 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:24:10 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:24:10 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:24:10 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:24:10 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:24:11 +0000] [4058] [DEBUG] GET /
+[2014-10-03 11:24:21 +0000] [4057] [DEBUG] GET /
+[2014-10-03 11:24:40 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:24:56 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:25:11 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:25:26 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:25:41 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:25:56 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:26:11 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:26:26 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:26:41 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:26:56 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:27:11 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:27:26 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:27:41 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:27:56 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:28:11 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:28:26 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:28:41 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:28:42 +0000] [4056] [DEBUG] GET /favicon.ico
+[2014-10-03 11:28:56 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:29:12 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:29:27 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:29:42 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:29:57 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:30:12 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:30:27 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:30:42 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:30:57 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:31:12 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:31:27 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:31:42 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:31:54 +0000] [3416] [DEBUG] 3 workers
+[2014-10-03 11:31:54 +0000] [3416] [INFO] Handling signal: term
+[2014-10-03 11:31:54 +0000] [4057] [INFO] Worker exiting (pid: 4057)
+[2014-10-03 11:31:54 +0000] [4056] [INFO] Worker exiting (pid: 4056)
+[2014-10-03 11:31:54 +0000] [4058] [INFO] Worker exiting (pid: 4058)
+[2014-10-03 11:31:54 +0000] [3416] [INFO] Shutting down: Master
+[2014-10-03 12:32:10 +0000] [5663] [DEBUG] Current configuration:
+  proxy_protocol: False
+  worker_connections: 1000
+  syslog: False
+  statsd_host: None
+  post_fork: <function post_fork at 0x1eda938>
+  pythonpath: None
+  enable_stdio_inheritance: False
+  worker_class: sync
+  ssl_version: 3
+  suppress_ragged_eofs: True
+  syslog_facility: user
+  when_ready: <function when_ready at 0x1eda668>
+  pre_fork: <function pre_fork at 0x1eda7d0>
+  cert_reqs: 0
+  preload_app: False
+  workers: 3
+  keepalive: 2
+  accesslog: None
+  pidfile: None
+  worker_tmp_dir: None
+  group: 1000
+  graceful_timeout: 30
+  spew: False
+  proc_name: None
+  umask: 0
+  on_reload: <function on_reload at 0x1eda500>
+  post_worker_init: <function post_worker_init at 0x1edaaa0>
+  pre_exec: <function pre_exec at 0x1edaed8>
+  limit_request_fields: 100
+  on_exit: <function on_exit at 0x1ede5f0>
+  config: None
+  logconfig: None
+  check_config: False
+  do_handshake_on_connect: False
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  proxy_allow_ips: ['127.0.0.1']
+  pre_request: <function pre_request at 0x1ede0c8>
+  post_request: <function post_request at 0x1ede1b8>
+  forwarded_allow_ips: ['127.0.0.1']
+  worker_int: <function worker_int at 0x1edac08>
+  ca_certs: None
+  threads: 1
+  max_requests: 0
+  chdir: /test_smyt
+  daemon: False
+  user: 1000
+  limit_request_line: 4094
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  certfile: None
+  worker_exit: <function worker_exit at 0x1ede320>
+  paste: None
+  default_proc_name: test_smyt_project.wsgi:application
+  errorlog: /test_smyt/log/log.txt
+  logger_class: gunicorn.glogging.Logger
+  syslog_addr: udp://localhost:514
+  syslog_prefix: None
+  ciphers: TLSv1
+  worker_abort: <function worker_abort at 0x1edad70>
+  loglevel: debug
+  bind: ['127.0.0.1:8000']
+  raw_env: []
+  reload: False
+  limit_request_field_size: 8190
+  nworkers_changed: <function nworkers_changed at 0x1ede488>
+  timeout: 30
+  on_starting: <function on_starting at 0x1eda398>
+  debug: False
+  django_settings: None
+  tmp_upload_dir: None
+  keyfile: None
+  backlog: 2048
+[2014-10-03 12:32:10 +0000] [5663] [INFO] Starting gunicorn 19.1.1
+[2014-10-03 12:32:10 +0000] [5663] [DEBUG] Arbiter booted
+[2014-10-03 12:32:10 +0000] [5663] [INFO] Listening at: http://127.0.0.1:8000 (5663)
+[2014-10-03 12:32:10 +0000] [5663] [INFO] Using worker: sync
+[2014-10-03 12:32:10 +0000] [5669] [INFO] Booting worker with pid: 5669
+[2014-10-03 12:32:10 +0000] [5670] [INFO] Booting worker with pid: 5670
+[2014-10-03 12:32:10 +0000] [5671] [INFO] Booting worker with pid: 5671
+[2014-10-03 12:32:10 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:32:14 +0000] [5671] [DEBUG] GET /
+[2014-10-03 12:32:40 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:32:55 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:33:10 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:33:25 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:33:40 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:33:55 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:34:10 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:34:25 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:34:40 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:34:55 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:35:10 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:35:25 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:35:40 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:35:55 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:36:10 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:36:25 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:36:40 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:36:55 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:37:10 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:37:25 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:37:40 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:37:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:38:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:38:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:38:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:38:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:39:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:39:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:39:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:39:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:40:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:40:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:40:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:40:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:41:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:41:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:41:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:41:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:42:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:42:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:42:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:43:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:43:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:43:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:43:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:44:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:44:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:44:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:44:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:45:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:45:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:45:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:45:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:46:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:46:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:46:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:46:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:47:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:47:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:47:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:47:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:48:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:48:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:48:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:48:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:49:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:49:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:49:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:49:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:50:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:50:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:50:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:50:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:51:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:51:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:51:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:51:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:52:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:52:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:52:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:52:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:53:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:53:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:53:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:54:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:54:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:54:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:54:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:55:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:55:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:55:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:55:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:56:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:56:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:56:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:56:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:57:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:57:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:57:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:57:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:58:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:58:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:58:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:58:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:59:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:59:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:59:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 12:59:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:00:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:00:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:00:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:00:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:01:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:01:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:01:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:01:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:02:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:02:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:02:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:02:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:03:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:03:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:03:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:03:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:04:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:04:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:04:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:04:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:05:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:05:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:05:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:05:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:06:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:06:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:06:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:06:57 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:07:12 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:07:27 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:07:42 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:07:57 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:08:12 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:08:27 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:08:42 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:08:57 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:09:12 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:09:27 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:09:42 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:09:57 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:10:12 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:10:27 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:10:42 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:10:57 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:11:12 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:11:27 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:11:42 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:11:57 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:12:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:12:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:12:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:12:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:13:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:13:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:13:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:13:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:14:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:14:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:14:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:14:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:15:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:15:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:15:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:15:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:16:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:16:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:16:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:16:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:17:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:17:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:17:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:17:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:18:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:18:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:18:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:18:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:19:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:19:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:19:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:19:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:20:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:20:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:20:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:20:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:21:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:21:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:21:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:21:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:22:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:22:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:22:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:22:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:23:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:23:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:23:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:23:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:24:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:24:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:24:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:24:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:25:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:25:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:25:44 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:26:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:26:29 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:26:44 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:26:59 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:27:14 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:27:29 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:27:44 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:27:59 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:28:14 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:28:29 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:28:44 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:28:59 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:29:14 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:29:29 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:29:44 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:29:59 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:30:14 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:30:29 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:30:44 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:30:59 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:31:14 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:31:29 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:31:44 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:31:59 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:32:14 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:32:29 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:32:44 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:33:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:33:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:33:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:33:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:34:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:34:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:34:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:34:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:35:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:35:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:35:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:35:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:36:14 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:36:29 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:36:44 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:36:59 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:37:14 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:37:29 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:37:44 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:37:59 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:38:14 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:38:29 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:38:44 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:38:59 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:39:14 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:39:29 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:39:44 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:39:59 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:40:14 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:40:29 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:40:44 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:40:59 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:41:14 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:41:29 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:41:44 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:41:59 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:42:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:42:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:42:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:43:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:43:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:43:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:43:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:44:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:44:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:44:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:44:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:45:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:45:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:45:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:45:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:46:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:46:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:46:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:46:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:47:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:47:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:47:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:47:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:48:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:48:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:48:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:48:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:49:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:49:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:49:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:49:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:50:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:50:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:50:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:50:49 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:51:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:51:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:51:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:51:49 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:52:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:52:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:52:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:52:49 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:53:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:53:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:53:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:53:49 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:54:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:54:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:54:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:55:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:55:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:55:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:55:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:56:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:56:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:56:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:56:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:57:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:57:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:57:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:57:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:58:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:58:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:58:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:58:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:59:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:59:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:59:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 13:59:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:00:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:00:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:00:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:00:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:01:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:01:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:01:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:01:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:02:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:02:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:02:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:02:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:03:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:03:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:03:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:03:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:04:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:04:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:04:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:04:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:05:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:05:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:05:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:05:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:06:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:06:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:06:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:06:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:07:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:07:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:07:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:07:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:08:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:08:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:08:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:08:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:09:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:09:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:09:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:09:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:10:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:10:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:10:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:10:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:11:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:11:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:11:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:11:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:12:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:12:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:12:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:12:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:13:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:13:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:13:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:13:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:14:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:14:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:14:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:14:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:15:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:15:17 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:15:32 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:15:47 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:16:02 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:16:17 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:16:32 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:16:47 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:17:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:17:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:17:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:17:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:18:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:18:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:18:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:18:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:19:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:19:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:19:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:19:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:20:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:20:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:20:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:20:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:21:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:21:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:21:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:21:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:22:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:22:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:22:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:22:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:23:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:23:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:23:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:23:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:24:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:24:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:24:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:24:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:25:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:25:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:25:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:25:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:26:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:26:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:26:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:26:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:27:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:27:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:27:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:27:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:28:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:28:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:28:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:28:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:29:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:29:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:29:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:29:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:30:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:30:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:30:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:30:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:31:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:31:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:31:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:31:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:32:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:32:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:32:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:33:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:33:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:33:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:33:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:34:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:34:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:34:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:35:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:35:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:35:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:35:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:36:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:36:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:36:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:36:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:37:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:37:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:37:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:37:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:38:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:38:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:38:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:38:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:39:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:39:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:39:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:39:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:40:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:40:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:40:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:40:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:41:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:41:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:41:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:41:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:42:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:42:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:42:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:42:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:43:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:43:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:43:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:43:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:44:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:44:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:44:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:45:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:45:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:45:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:45:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:46:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:46:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:46:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:46:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:47:03 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:47:18 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:47:33 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:47:48 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:48:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:48:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:48:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:48:49 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:49:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:49:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:49:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:49:49 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:50:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:50:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:50:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:50:49 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:51:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:51:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:51:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:51:49 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:52:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:52:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:52:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:52:49 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:53:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:53:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:53:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:53:49 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:54:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:54:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:54:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:54:49 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:55:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:55:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:55:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:55:49 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:56:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:56:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:56:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:56:49 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:57:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:57:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:57:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:57:49 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:58:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:58:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:58:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:58:49 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:59:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:59:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:59:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 14:59:49 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:00:04 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:00:19 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:00:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:00:53 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:01:08 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:01:34 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:01:53 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:02:08 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:02:23 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:02:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:02:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:03:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:03:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:03:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:03:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:04:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:04:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:04:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:04:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:05:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:05:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:05:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:05:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:06:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:06:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:06:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:06:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:07:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:07:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:07:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:07:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:08:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:08:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:08:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:08:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:09:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:09:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:09:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:09:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:10:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:10:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:10:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:10:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:11:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:11:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:11:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:11:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:12:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:12:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:12:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:12:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:13:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:13:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:13:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:13:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:14:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:14:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:14:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:14:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:15:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:15:35 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:15:50 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:16:05 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:16:20 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:16:35 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:16:50 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:17:05 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:17:20 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:17:35 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:17:50 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:18:05 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:18:20 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:18:35 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:18:50 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:19:05 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:19:20 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:19:35 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:19:50 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:20:05 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:20:20 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:20:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:20:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:21:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:21:25 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:21:40 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:21:55 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:22:10 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:22:25 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:22:40 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:22:55 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:23:10 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:23:25 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:23:40 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:23:55 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:24:10 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:24:25 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:24:40 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:24:55 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:25:10 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:25:25 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:25:40 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:25:55 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:26:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:26:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:26:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:27:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:27:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:27:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:27:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:28:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:28:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:28:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:28:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:29:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:29:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:29:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:29:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:30:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:30:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:30:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:30:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:31:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:31:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:31:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:32:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:32:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:32:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:32:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:33:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:33:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:33:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:33:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:34:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:34:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:34:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:34:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:35:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:35:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:35:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:35:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:36:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:36:21 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:36:36 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:36:51 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:37:06 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:37:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:37:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:37:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:38:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:38:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:38:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:38:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:39:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:39:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:39:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:39:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:40:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:40:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:40:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:40:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:41:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:41:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:41:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:41:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:42:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:42:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:42:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:42:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:43:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:43:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:43:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:43:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:44:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:44:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:44:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:44:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:45:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:45:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:45:42 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:45:57 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:46:12 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:46:27 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:46:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:47:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:47:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:47:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:47:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:48:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:48:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:48:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:48:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:49:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:49:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:49:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:49:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:50:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:50:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:50:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:50:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:51:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:51:22 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:51:37 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:51:52 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:52:07 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:52:23 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:52:38 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:52:53 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:53:08 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:53:23 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:53:38 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:53:53 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:54:08 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:54:23 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:54:38 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:54:53 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:55:08 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:55:23 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:55:38 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:55:53 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:56:08 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:56:23 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:56:38 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:56:53 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:57:08 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:57:23 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:57:38 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:57:53 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:58:08 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:58:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:58:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:59:08 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:59:23 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:59:38 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 15:59:53 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:00:08 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:00:23 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:00:38 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:00:53 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:01:08 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:01:23 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:01:38 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:01:53 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:02:08 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:02:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:02:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:02:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:03:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:03:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:03:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:03:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:04:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:04:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:04:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:04:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:05:23 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:05:38 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:05:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:06:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:06:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:06:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:06:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:07:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:07:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:07:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:07:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:08:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:08:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:08:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:08:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:09:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:09:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:09:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:09:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:10:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:10:25 +0000] [5670] [DEBUG] GET /
+[2014-10-03 16:10:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:10:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:10:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:11:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:11:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:11:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:11:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:12:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:12:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:12:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:12:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:13:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:13:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:13:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:13:58 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:14:13 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:14:28 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:14:43 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:14:59 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:15:14 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:15:29 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:15:44 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:15:59 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:16:14 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:16:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:16:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:17:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:17:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:17:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:17:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:18:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:18:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:18:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:18:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:19:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:19:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:19:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:19:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:20:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:20:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:20:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:20:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:21:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:21:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:21:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:21:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:22:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:22:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:22:39 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:22:54 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:23:09 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:23:24 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:23:40 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:23:55 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:24:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:24:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:24:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:24:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:25:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:25:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:25:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:25:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:26:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:26:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:26:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:26:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:27:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:27:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:27:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:27:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:28:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:28:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:28:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:28:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:29:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:29:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:29:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:29:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:30:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:30:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:30:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:30:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:31:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:31:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:31:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:31:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:32:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:32:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:32:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:32:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:33:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:33:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:33:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:33:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:34:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:34:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:34:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:34:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:35:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:35:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:35:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:35:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:36:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:36:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:36:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:36:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:37:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:37:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:37:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:38:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:38:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:38:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:38:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:39:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:39:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:39:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:39:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:40:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:40:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:40:30 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:40:45 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:41:00 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:41:15 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:41:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:41:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:42:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:42:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:42:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:42:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:43:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:43:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:43:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:43:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:44:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:44:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:44:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:44:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:45:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:45:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:45:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:45:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:46:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:46:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:46:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:46:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:47:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:47:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:47:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:47:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:48:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:48:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:48:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:48:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:49:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:49:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:49:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:49:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:50:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:50:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:50:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:50:56 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:51:11 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:51:26 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:51:41 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:51:57 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:52:12 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:52:27 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:52:42 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:53:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:53:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:53:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:53:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:54:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:54:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:54:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:54:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:55:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:55:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:55:31 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:55:46 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:56:01 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:56:16 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:56:42 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:56:57 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:57:12 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:57:27 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:57:42 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:57:57 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:58:12 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:58:27 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:58:42 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:58:57 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:59:12 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:59:27 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:59:42 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 16:59:57 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 17:00:12 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 17:00:20 +0000] [5670] [INFO] Worker exiting (pid: 5670)
+[2014-10-03 17:00:20 +0000] [5671] [INFO] Worker exiting (pid: 5671)
+[2014-10-03 17:00:20 +0000] [5669] [INFO] Worker exiting (pid: 5669)
+[2014-10-03 17:00:20 +0000] [5663] [DEBUG] 3 workers
+[2014-10-03 17:00:20 +0000] [5663] [INFO] Handling signal: int
+[2014-10-03 17:00:20 +0000] [5663] [INFO] Shutting down: Master

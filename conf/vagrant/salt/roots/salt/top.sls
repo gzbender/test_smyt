@@ -3,10 +3,8 @@ base:
     - nginx
     - python2
     - python2.pip
-    - mysql.server
-    - mysql.python
-    - mysql.user
-    - mysql.database
+    - postgres
+    - postgres.python
     - virtualenv
     - other
     - test-smyt

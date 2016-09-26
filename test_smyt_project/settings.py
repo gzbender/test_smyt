@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.postgres',
     'rest_framework',
     'test_smyt',
 )
@@ -60,18 +61,12 @@ WSGI_APPLICATION = 'test_smyt_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'smyt',
-        'USER': 'smyt',
-        'PASSWORD': 'somepass',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'CHARSET': 'utf8',
-        'COLLATION': 'utf8_general_ci',
-        'TEST': {
-            'CHARSET': 'utf8',
-            'COLLATION': 'utf8_general_ci',
-        }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'db',
+        'USER': 'user',
+        'PASSWORD': 'pass',
+        'HOST': '/var/run/postgresql',
+        'PORT': 5432,
     }
 }
 

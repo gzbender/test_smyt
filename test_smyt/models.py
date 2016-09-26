@@ -6,6 +6,7 @@ from copy import deepcopy
 
 from django.db import models
 from django.utils.functional import cached_property
+from django.contrib.postgres.fields import ArrayField
 from rest_framework import serializers
 
 # Create your models here.
@@ -76,3 +77,34 @@ class ModelFactory(object):
 generated_models = ModelFactory(yaml.load(open(os.path.join(os.path.dirname(__file__), 'models.yaml'))))
 locals().update(generated_models.models)
 locals().update(generated_models.serializers)
+
+class Category(models.Model):
+    name = models.CharField(u'Группа товара', max_length=64)
+
+    def __str__(self):
+        return self.name
+
+
+class Product(models.Model):
+    category = models.ForeignKey(Category, verbose_name=u'Группа')
+    name = models.CharField(u'Название товара', max_length=128)
+    price = models.DecimalField(u'Стоимость единицы, руб.', max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return self.name
+
+
+class Phone(models.Model):
+    phone = models.CharField(max_length=255)
+    users = ArrayField(base_field=models.IntegerField())
+
+
+class Item(models.Model):
+    STATUS_CHOICES = (
+        (3, u'Не продан'),
+        (7, u'Продан'),
+        (5, u'Резерв'),
+    )
+
+    user_id = models.IntegerField()
+    status = models.SmallIntegerField(choices=STATUS_CHOICES)
